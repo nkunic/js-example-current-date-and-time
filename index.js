@@ -34,16 +34,10 @@ var daylist = [
   'Saturday',
 ];
 
-var dayToday = daylist[day];
-console.log(dayToday); // Saturday
-
-var currentDayValue = '*** Today is: ' + daylist[day] + '.***';
-console.log(currentDayValue); // *** Today is: Saturday.***
-
-currentDay.innerText = currentDayValue;
-
-
-
+var currentDayValue = daylist[day];
+//console.log(currentDayValue); // Saturday
+console.log('*** Today is: ' + currentDayValue + '***'); // *** Today is: Saturday.***
+currentDay.innerText = currentDayValue; // Saturday
 
 /* Hours */
 var hour = today.getHours();
@@ -83,8 +77,7 @@ if (hour === 0 && prepand === ' AM ') {
   }
 }
 
-var currentTimeValue = hour + prepand + ' : ' + minute + 'min' + ' : ' + second + 'sec';
-
+var currentTimeValue =
+  hour + prepand + ' : ' + minute + 'min' + ' : ' + second + 'sec';
 console.log('*** Current time is: ' + currentTimeValue + '***'); // *** Current time is: 3 PM : 48min : 47sec ***
-
 currentTime.innerText = currentTimeValue;
