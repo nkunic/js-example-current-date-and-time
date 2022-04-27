@@ -7,49 +7,59 @@ import './css/style.css';
 
 /*** CURRENT DATE AND TIME ***/
 
-/* Napiši JavaScript program koji će u konzuli prikazati tačan datum i vreme sledećem formatu.
-U ovakvom formatu:
-Danas je: Četvrtak.
-Trenutno vreme : 9 AM  : 22 : 24 */
+/* Write a JavaScript program that will display the exact date and time in the console in the following format.
+In this format:
+Today is: Thursday.
+Current time: 9 AM  : 22 : 24 */
+
+// Selectors
+var currentDay = document.querySelector('#currentDay');
+var currentTime = document.querySelector('#currentTime');
 
 /* Date today */
 var today = new Date();
-console.log(today); // Today date: 2022-04-16T13:12:38.178Z
+// console.log(today); // Today date: 2022-04-16T13:12:38.178Z
 
 var day = today.getDay();
 // var day = new Date().getDay();
-console.log(day); // 6
+// console.log(day); // 6
 
 var daylist = [
-  'Nedelja',
-  'Ponedeljak',
-  'Utorak',
-  'Sreda ',
-  'Četvrtak',
-  'Petak',
-  'Subota',
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
 ];
 
 var dayToday = daylist[day];
-console.log(dayToday); // Subota
+console.log(dayToday); // Saturday
 
-console.log('*** Danas je: ' + daylist[day] + '.***'); // *** Danas je: Subota.***
+var currentDayValue = '*** Today is: ' + daylist[day] + '.***';
+console.log(currentDayValue); // *** Today is: Saturday.***
+
+currentDay.innerText = currentDayValue;
+
+
+
 
 /* Hours */
 var hour = today.getHours();
-console.log(hour); // 15 (Hour)
+//console.log(hour); // 15 (Hour)
 
 var minute = today.getMinutes();
-console.log(minute); // 39 (Minutes)
+//console.log(minute); // 39 (Minutes)
 
 var second = today.getSeconds();
-console.log(second); // 33 (Seconds)
+//console.log(second); // 33 (Seconds)
 
 var prepand = hour >= 12 ? ' PM ' : ' AM ';
-console.log(prepand); // PM
+//console.log(prepand); // PM
 
 hour = hour >= 12 ? hour - 12 : hour;
-console.log(hour); // 3
+//console.log(hour); // 3
 
 /* Noon or 12PM */
 if (hour === 0 && prepand === ' PM ') {
@@ -73,14 +83,8 @@ if (hour === 0 && prepand === ' AM ') {
   }
 }
 
-console.log(
-  '*** Trenutno vreme: ' +
-    hour +
-    prepand +
-    ' : ' +
-    minute +
-    'min' +
-    ' : ' +
-    second +
-    'sec ***'
-); // *** Trenutno vreme: 3 PM : 48min : 47sec ***
+var currentTimeValue = hour + prepand + ' : ' + minute + 'min' + ' : ' + second + 'sec';
+
+console.log('*** Current time is: ' + currentTimeValue + '***'); // *** Current time is: 3 PM : 48min : 47sec ***
+
+currentTime.innerText = currentTimeValue;
