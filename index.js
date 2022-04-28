@@ -34,6 +34,7 @@ var daylist = [
   'Saturday',
 ];
 
+//*** Print current day
 var currentDayValue = daylist[day];
 //console.log(currentDayValue); // Saturday
 console.log('*** Today is: ' + currentDayValue + '***'); // *** Today is: Saturday.***
@@ -77,6 +78,7 @@ if (hour === 0 && prepand === ' AM ') {
   }
 }
 
+//*** Print current time
 var currentTimeValue =
   hour + prepand + ' : ' + minute + 'min' + ' : ' + second + 'sec';
 console.log('*** Current time is: ' + currentTimeValue + '***'); // *** Current time is: 3 PM : 48min : 47sec ***
